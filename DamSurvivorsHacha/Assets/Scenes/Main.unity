@@ -632,13 +632,34 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695006225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6cefe932b6b76140862d7a174c84c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LanzadorArma
   armaPrefab: {fileID: 2602484433876300439, guid: a440a18f7b1b80a41ab5623393bca7ef, type: 3}
   ratioDeDisparo: 3
+--- !u!114 &695006233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695006225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a9bb35c1620cf46b6740eb0d84f817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LanzadorVarita
+  radioBusqueda: 20
+  delayEntreMisiles: 0.15
+  cantidadMisiles: 2
+  cooldown: 1
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  proyectilPrefab: {fileID: 5282059859811340158, guid: ff8381f1b0e17dd40913762314ddc9f0, type: 3}
+  puntoDisparo: {fileID: 695006229}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1200,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7783906019512743891, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
       insertIndex: -1
       addedObject: {fileID: 695006232}
+    - targetCorrespondingSourceObject: {fileID: 7783906019512743891, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 695006233}
   m_SourcePrefab: {fileID: 100100000, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
 --- !u!1001 &6115626135068715340
 PrefabInstance:

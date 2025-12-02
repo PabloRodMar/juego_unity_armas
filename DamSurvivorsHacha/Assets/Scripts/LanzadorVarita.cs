@@ -3,70 +3,65 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 
-public class MisilDoble : MonoBehaviour
+public class LanzadorVarita : MonoBehaviour
 {
-    [Header("Datos del arma")]
+    [Header("Datos de la Varita")]
     public float radioBusqueda = 20f;
     public float delayEntreMisiles = 0.15f;
-    public int n_proyectiles = 2;
+    public int cantidadMisiles = 2;
+    public float cooldown = 1f; // tiempo entre disparos automáticos
     public LayerMask enemyLayer;
 
     [Header("Proyectil")]
     public GameObject proyectilPrefab;
-
-    private GameObject player;
+    public Transform puntoDisparo;
 
     void Start()
     {
-        // Posicionar el arma en el jugador
-        player = GameObject.FindGameObjectWithTag("Player");
-        transform.position = player.transform.position;
-        transform.SetParent(player.transform);
-
-        // Comenzar lógica principal
-        StartCoroutine(Disparar());
-
-        // Destruir el arma después de su acción
-        Destroy(gameObject);
+        StartCoroutine(AutoDisparo());
     }
 
+    IEnumerator AutoDisparo()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(cooldown);
 
+            ActivarVarita();
+        }
+    }
+
+    public void ActivarVarita()
+    {
+        StartCoroutine(Disparar());
+    }
 
     IEnumerator Disparar()
     {
-        // 1. Buscar enemigos en radio
-        Collider[] hits = Physics.OverlapSphere(transform.position, radioBusqueda);
+        Collider[] hits = Physics.OverlapSphere(transform.position, radioBusqueda, enemyLayer);
 
         if (hits.Length == 0)
             yield break;
 
-        // 2. Ordenar por distancia y coger los 2 más cercanos
         List<Transform> objetivos = hits
             .Select(h => h.transform)
             .OrderBy(t => Vector3.Distance(transform.position, t.position))
-            .Take(n_proyectiles)
+            .Take(cantidadMisiles)
             .ToList();
 
-        // 3. Disparar a cada objetivo
-        foreach (var objetivo in objetivos)
+        foreach (Transform objetivo in objetivos)
         {
-            DispararMisil(objetivo);
+            Vector3 direccion = (objetivo.position - puntoDisparo.position).normalized;
+
+            GameObject misil = Instantiate(
+                proyectilPrefab,
+                puntoDisparo.position,
+                Quaternion.LookRotation(direccion)
+            );
+
+            misil.GetComponent<MisilVarita>().SetObjetivo(objetivo);
+
             yield return new WaitForSeconds(delayEntreMisiles);
         }
-    }
-
-    void DispararMisil(Transform objetivo)
-    {
-        // Instanciar proyectil
-        GameObject projectile = Instantiate(proyectilPrefab, transform.position, Quaternion.identity);
-
-        MisilVarita misilV = projectile.GetComponent<MisilVarita>();
-        misilV.enemigo = objetivo;
-
-        // Calcular dirección fija hacia el enemigo
-        Vector3 dir = (objetivo.position - transform.position).normalized;
-
-        // Pasársela al script del proyectil
-        projectile.GetComponent<LanzadorVarita>().dispararArma();
     }
 }
