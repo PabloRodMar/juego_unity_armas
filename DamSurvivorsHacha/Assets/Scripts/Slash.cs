@@ -1,29 +1,27 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Slash : MonoBehaviour
 {
     [Header("Datos del Slash")]
-    public float speed = 10f;
+    private GameObject player;
     public float tiempoVida = 2f;
-    public int damage = 250;
-    public float detectionRadius = 5f;
-
-    private GameObject objetivo;
-
+    public int damage = 25;
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        transform.position = player.transform.position;
+        if (player)
+        {
+            transform.SetParent(player.transform);
+        }
         Destroy(gameObject, tiempoVida);
-
-        // Buscar enemigo al inicio
-        objetivo = GetNearestEnemyWithinRadius();
     }
 
     void Update()
     {
-        if (objetivo == null || GetNearestEnemyWithinRadius() == null) return;
 
-        Vector3 direccion = objetivo.transform.position - transform.position;
-        transform.position += direccion.normalized * speed * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,25 +35,5 @@ public class Slash : MonoBehaviour
             }
             Destroy(gameObject);
         }
-    }
-
-    GameObject GetNearestEnemyWithinRadius()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject nearest = null;
-
-        Vector3 pos = transform.position;
-
-        foreach (GameObject enemy in enemies)
-        {
-            float dist = Vector3.Distance(pos, enemy.transform.position);
-
-            if (dist <= detectionRadius)
-            {
-                nearest = enemy;
-            }
-        }
-
-        return nearest;
     }
 }

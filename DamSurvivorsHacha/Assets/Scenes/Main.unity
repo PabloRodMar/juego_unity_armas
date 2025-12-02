@@ -637,9 +637,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cefe932b6b76140862d7a174c84c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LanzadorArma
-  armaPrefab: {fileID: 5539259773598772490, guid: d709a38d71901f74d8b8a3e0e084f6f9, type: 3}
-  ratioDeDisparo: 1
-  detectionRadius: 5
+  armaPrefab: {fileID: 2602484433876300439, guid: a440a18f7b1b80a41ab5623393bca7ef, type: 3}
+  ratioDeDisparo: 3
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,6 +1121,10 @@ PrefabInstance:
       propertyPath: armaPrefab
       value: 
       objectReference: {fileID: 5539259773598772490, guid: d709a38d71901f74d8b8a3e0e084f6f9, type: 3}
+    - target: {fileID: 7447197333509052826, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7783906019512743891, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
       propertyPath: m_Name
       value: Player

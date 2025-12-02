@@ -5,7 +5,6 @@ public class LanzadorArma : MonoBehaviour
 {
     public GameObject armaPrefab;
     public float ratioDeDisparo = 1f; // Armas por segundo
-     public float detectionRadius = 5f;
     void Start()
     {
         StartCoroutine(dispararArma());
@@ -15,7 +14,7 @@ public class LanzadorArma : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(armaPrefab, transform.position, transform.rotation);
+            Instantiate(armaPrefab, transform.position, transform.rotation * armaPrefab.transform.rotation);
             yield return new WaitForSeconds(ratioDeDisparo);
         }
     }
