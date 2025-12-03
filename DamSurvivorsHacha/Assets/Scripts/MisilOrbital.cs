@@ -2,18 +2,22 @@ using UnityEngine;
 
 public class MisilOrbital : MonoBehaviour
 {
-    public GameObject player; 
+    public Transform player;
     public float rotationSpeed = 100f;
     public float radius = 2f;
 
-    private void Start()
+    private Vector3 offset;
+
+    void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        transform.position = player.transform.position + Vector3.right * radius;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        offset = new Vector3(radius, 0, 0);
     }
 
-    private void Update()
+    void Update()
     {
-        transform.RotateAround(player.transform.position, Vector3.up, rotationSpeed * Time.deltaTime);
+        // Rotar el offset sin importar la rotación del player
+        offset = Quaternion.Euler(0, rotationSpeed * Time.deltaTime, 0) * offset;
+        transform.position = player.position + offset;
     }
 }

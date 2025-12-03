@@ -4,28 +4,27 @@ using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Rayo : MonoBehaviour
+public class FrostZone : MonoBehaviour
 {
-    [Header("Datos del Rayo")]
+    [Header("Datos")]
+    public float ralentizacion = 3f;
+
     private GameObject player;
-    public float tiempoVida = 2.5f;
-    public int damage = 5;
-    public float ticDano = 0.25f;
+    public int damage = 1;
+    public float ticDano = 3f;
     private List<GameObject> listaEnemigos;
 
-    // Update is called once per frame
     void Start()
     {
         listaEnemigos = new List<GameObject>();
 
         StartCoroutine(recibirDano());
         player = GameObject.FindGameObjectWithTag("Player");
-        transform.position = player.transform.position + player.transform.forward * 3f;
+        transform.position = player.transform.position;
         if (player)
         {
             transform.SetParent(player.transform);
         }
-        Destroy(gameObject, tiempoVida);
     }
 
     void Update()
@@ -33,7 +32,10 @@ public class Rayo : MonoBehaviour
 
     }
 
-    private void OnTriggerStay(Collider other) {
+    // De aquí para abajo es reciclado del código del rayo, con alguna cosa nueva
+
+    private void OnTriggerStay(Collider other)
+    {
         if (other.CompareTag("Enemy"))
         {
             EnemyController enemy = other.GetComponent<EnemyController>();
@@ -49,6 +51,11 @@ public class Rayo : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             listaEnemigos.Add(other.GameObject());
+            EnemyController enemy = other.GetComponent<EnemyController>();
+            if (enemy)
+            {
+                enemy.AplicarRalentizacion(ralentizacion);
+            }
         }
     }
 
@@ -69,7 +76,12 @@ public class Rayo : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            EnemyController enemy = other.GetComponent<EnemyController>();
             listaEnemigos.Remove(other.GameObject());
+            if (enemy)
+            {
+                enemy.QuitarRalentizacion();
+            }
         }
     }
 }

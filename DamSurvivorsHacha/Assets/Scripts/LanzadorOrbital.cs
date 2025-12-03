@@ -3,17 +3,15 @@ using UnityEngine;
 public class LanzadorOrbital : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public float fireRate = 0.5f;
-    private float fireTimer = 0f;
+    private int lvl = 1;
+    private int it = 0;
 
     void Update()
     {
-        fireTimer += Time.deltaTime;
-
-        if(fireTimer >= fireRate)
+        while (it < lvl)
         {
             Instantiate(bulletPrefab, transform.position, transform.rotation);
-            fireTimer = 0f;
+            it++;
         }
     }
 }

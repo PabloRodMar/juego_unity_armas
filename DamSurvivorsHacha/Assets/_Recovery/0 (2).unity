@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cefe932b6b76140862d7a174c84c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LanzadorArma
-  armaPrefab: {fileID: 3539884569674725182, guid: 886f0be60c43916459e742a7f58888d6, type: 3}
+  armaPrefab: {fileID: 2602484433876300439, guid: a440a18f7b1b80a41ab5623393bca7ef, type: 3}
   ratioDeDisparo: 3
 --- !u!114 &695006233
 MonoBehaviour:
@@ -703,7 +703,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695006225}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5a9bb35c1620cf46b6740eb0d84f817, type: 3}
   m_Name: 
@@ -711,7 +711,7 @@ MonoBehaviour:
   radioBusqueda: 20
   cooldown: 1
   cooldownMisiles: 0.15
-  lvl: 2
+  cantidadMisiles: 2
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695006225}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67281f3b30b4f2940ae87ae0fbf8f9c0, type: 3}
   m_Name: 

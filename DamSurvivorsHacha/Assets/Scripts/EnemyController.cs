@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -17,6 +18,13 @@ public class EnemyController : MonoBehaviour
     private int damage;
     private int defense;
     private float speed;
+    // Public para comprobar que está bien desde el inspector
+    public float speed_original;
+
+    //Datos necesario para cambiar el color al recibir daño//   
+    private Renderer render;
+    private Color colorOriginal;
+    private float tiempoFlash = 0.5f;
     
     /// <summary>
     /// /////////////////////////////////// Funciones Unity ///////////////////////////////
@@ -31,6 +39,9 @@ public class EnemyController : MonoBehaviour
     }
     void Start()
     {
+        speed_original = speed;
+        render = GetComponentInChildren<Renderer>();
+        colorOriginal = render.material.color;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -51,6 +62,8 @@ public class EnemyController : MonoBehaviour
 
     public void Recibirdano(int danio)
     {
+        StartCoroutine(FlashDamage());
+
         int danioFinal = danio - defense;
         if (danioFinal < 0)
         {
@@ -66,5 +79,24 @@ public class EnemyController : MonoBehaviour
     private void Morir()
     {
         Destroy(gameObject);
+    }
+
+    private IEnumerator FlashDamage()
+    {
+        render.material.color = Color.white;
+        yield return new WaitForSeconds(tiempoFlash);
+        render.material.color = colorOriginal;
+    }
+
+    // Estas dos funciones son utilizadas en la FrostZone, una para cuando entra en el área...
+    public void AplicarRalentizacion(float relentizador)
+    {
+        speed = speed_original * relentizador;
+    }
+
+    // ... y otra para cuando sale
+    public void QuitarRalentizacion()
+    {
+        speed = speed_original;
     }
 }

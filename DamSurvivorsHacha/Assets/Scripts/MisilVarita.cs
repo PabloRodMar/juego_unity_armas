@@ -3,7 +3,7 @@ using UnityEngine;
 public class MisilVarita : MonoBehaviour
 {
     public float speed = 15f;
-    public float tiempoVida = 1.5f;
+    public float tiempoVida = 2f;
     public int damage = 25;
 
     private Transform objetivo;
