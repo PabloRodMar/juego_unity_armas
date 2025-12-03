@@ -4,12 +4,7 @@ public class PlayerStats : MonoBehaviour
 {
     private int currentHealth;
     private int maxHealth = 100;
-    private int ataque = 5;
     private int defensa = 0;
-    private float velMov = 5f;
-
-    private float velAtk = 1f;
-
     private bool estaVivo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

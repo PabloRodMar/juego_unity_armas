@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
 
     //Stats propios//
     private int maxHP;
-    private int currentHP;
+    public int currentHP;
     private int damage;
     private int defense;
     private float speed;

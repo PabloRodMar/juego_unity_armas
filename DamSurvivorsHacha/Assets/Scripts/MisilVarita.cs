@@ -4,7 +4,7 @@ public class MisilVarita : MonoBehaviour
 {
     public float speed = 15f;
     public float tiempoVida = 1.5f;
-    public int damage = 20;
+    public int damage = 25;
 
     private Transform objetivo;
 
@@ -40,8 +40,8 @@ public class MisilVarita : MonoBehaviour
             if (enemy != null)
             {
                 enemy.Recibirdano(damage);
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
         }
     }
 }

@@ -7,36 +7,31 @@ public class LanzadorVarita : MonoBehaviour
 {
     [Header("Datos de la Varita")]
     public float radioBusqueda = 20f;
-    public float delayEntreMisiles = 0.15f;
+    public float cooldown = 1f;
+    public float cooldownMisiles = 0.15f;
     public int cantidadMisiles = 2;
-    public float cooldown = 1f; // tiempo entre disparos automáticos
     public LayerMask enemyLayer;
 
     [Header("Proyectil")]
     public GameObject proyectilPrefab;
-    public Transform puntoDisparo;
+    public Transform player;
 
     void Start()
     {
-        StartCoroutine(AutoDisparo());
+        StartCoroutine(DispararAmbos());
     }
 
-    IEnumerator AutoDisparo()
+    IEnumerator DispararAmbos()
     {
         while (true)
         {
             yield return new WaitForSeconds(cooldown);
 
-            ActivarVarita();
+            StartCoroutine(DispararUno());
         }
     }
 
-    public void ActivarVarita()
-    {
-        StartCoroutine(Disparar());
-    }
-
-    IEnumerator Disparar()
+    IEnumerator DispararUno()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, radioBusqueda, enemyLayer);
 
@@ -51,17 +46,17 @@ public class LanzadorVarita : MonoBehaviour
 
         foreach (Transform objetivo in objetivos)
         {
-            Vector3 direccion = (objetivo.position - puntoDisparo.position).normalized;
+            Vector3 direccion = (objetivo.position - player.position).normalized;
 
             GameObject misil = Instantiate(
                 proyectilPrefab,
-                puntoDisparo.position,
+                player.position,
                 Quaternion.LookRotation(direccion)
-            );
+        );
 
             misil.GetComponent<MisilVarita>().SetObjetivo(objetivo);
 
-            yield return new WaitForSeconds(delayEntreMisiles);
+            yield return new WaitForSeconds(cooldownMisiles);
         }
     }
 }
