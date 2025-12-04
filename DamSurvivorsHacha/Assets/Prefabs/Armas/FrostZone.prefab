@@ -126,5 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7189033f3e6340e42acc359f9aea6409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrostZone
-  tiempoVida: 1
+  ralentizacion: 0.3
   damage: 25
+  ticDano: 1

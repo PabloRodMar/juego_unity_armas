@@ -7,11 +7,11 @@ using UnityEngine;
 public class FrostZone : MonoBehaviour
 {
     [Header("Datos")]
-    public float ralentizacion = 3f;
+    public float ralentizacion = 0.3f;
 
     private GameObject player;
     public int damage = 1;
-    public float ticDano = 3f;
+    public float ticDano = 0.5f;
     private List<GameObject> listaEnemigos;
 
     void Start()

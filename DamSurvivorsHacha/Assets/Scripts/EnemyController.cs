@@ -13,18 +13,18 @@ public class EnemyController : MonoBehaviour
     public EnemyStats Stats;
 
     //Stats propios//
-    private int maxHP;
-    public int currentHP;
+    private float maxHP;
+    public float currentHP;
     private int damage;
     private int defense;
     private float speed;
     // Public para comprobar que está bien desde el inspector
-    public float speed_original;
+    private float speed_original;
 
     //Datos necesario para cambiar el color al recibir daño//   
     private Renderer render;
     private Color colorOriginal;
-    private float tiempoFlash = 0.5f;
+    public float tiempoFlash = 0.5f;
     
     /// <summary>
     /// /////////////////////////////////// Funciones Unity ///////////////////////////////
@@ -60,11 +60,11 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void Recibirdano(int danio)
+    public void Recibirdano(float danio)
     {
         StartCoroutine(FlashDamage());
 
-        int danioFinal = danio - defense;
+        float danioFinal = danio - defense;
         if (danioFinal < 0)
         {
             danioFinal = 0;
