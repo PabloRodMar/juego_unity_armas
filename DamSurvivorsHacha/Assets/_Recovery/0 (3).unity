@@ -262,9 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   spawnRadius: 10
   player: {fileID: 695006229}
-  oleadas:
-  - {fileID: 11400000, guid: 87b09023b01df3145951dff2ea5ec873, type: 2}
-  - {fileID: 11400000, guid: 0bef993e290729342991626ffb43ce6e, type: 2}
+  oleadas: []
 --- !u!4 &100598263
 Transform:
   m_ObjectHideFlags: 0
@@ -725,7 +723,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695006225}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67281f3b30b4f2940ae87ae0fbf8f9c0, type: 3}
   m_Name: 
@@ -740,12 +738,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695006225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bce4d0fd2a375304fb9ee42b18b727ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LanzadorFrost
-  armaPrefab: {fileID: 141498349168935902, guid: 0db5d92cfd0b67940bcb52ca7f07c88a, type: 3}
+  armaPrefab: {fileID: 8704008045383399303, guid: ca51940dfbe2b3e4a96c9c3254c5a94e, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

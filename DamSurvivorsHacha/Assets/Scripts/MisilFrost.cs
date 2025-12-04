@@ -9,9 +9,9 @@ public class FrostZone : MonoBehaviour
     [Header("Datos")]
     public float ralentizacion = 0.3f;
 
-    private GameObject player;
+    public GameObject player;
     public int damage = 1;
-    public float ticDano = 0.5f;
+    public float ticDano = 1f;
     private List<GameObject> listaEnemigos;
 
     void Start()
@@ -20,7 +20,6 @@ public class FrostZone : MonoBehaviour
 
         StartCoroutine(recibirDano());
         player = GameObject.FindGameObjectWithTag("Player");
-        transform.position = player.transform.position;
         if (player)
         {
             transform.SetParent(player.transform);

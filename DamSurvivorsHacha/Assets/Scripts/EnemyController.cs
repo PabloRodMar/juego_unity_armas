@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
     //Datos necesario para cambiar el color al recibir daño//   
     private Renderer render;
     private Color colorOriginal;
-    public float tiempoFlash = 0.5f;
+    public float tiempoFlash = 0.25f;
     
     /// <summary>
     /// /////////////////////////////////// Funciones Unity ///////////////////////////////

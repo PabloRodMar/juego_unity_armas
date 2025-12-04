@@ -33,10 +33,12 @@ public class LanzadorOrbital : MonoBehaviour
         }
         orbitals.Clear();
 
+        // Esto hace que al nivel 1 sean 3 bolas y las bolas solo se añadan cada 2 niveles
+        int numBolas = 3 + Mathf.FloorToInt((lvl - 1) / 2f);
         // Crear las nuevas
-        float angleStep = 360f / lvl;
+        float angleStep = 360f / numBolas;
 
-        for (int i = 0; i < lvl; i++)
+        for (int i = 0; i < numBolas; i++)
         {
             float angle = angleStep * i;
 

@@ -4,9 +4,10 @@ using UnityEngine;
 public class LanzadorFrost : MonoBehaviour
 {
     public GameObject armaPrefab;
+    public Transform player;
     
     void Start()
     {
-        Instantiate(armaPrefab, transform.position, transform.rotation);
+        Instantiate(armaPrefab, player.position, transform.rotation);
     }
 }
