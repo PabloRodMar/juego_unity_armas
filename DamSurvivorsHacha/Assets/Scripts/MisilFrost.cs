@@ -11,7 +11,7 @@ public class FrostZone : MonoBehaviour
 
     public GameObject player;
     public int damage = 1;
-    public int lvl = 1;
+    public int nivelArma = 1;
     public float ticDano = 1f;
     private List<GameObject> listaEnemigos;
 
@@ -32,19 +32,8 @@ public class FrostZone : MonoBehaviour
 
     }
 
-    // De aquí para abajo es reciclado del código del rayo, con alguna cosa nueva
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            EnemyController enemy = other.GetComponent<EnemyController>();
-            if (enemy != null)
-            {
-                enemy.Recibirdano(damage);
-            }
-        }
-    }
+    // De aquí para abajo es reciclado del código del rayo, quitando el OnTriggerStay (funcionaba mal)
+    // y con algún cambio menor
 
     private void OnTriggerEnter(Collider other)
     {
@@ -54,22 +43,28 @@ public class FrostZone : MonoBehaviour
             EnemyController enemy = other.GetComponent<EnemyController>();
             if (enemy)
             {
-                enemy.AplicarRalentizacion(ralentizacion * lvl * 1.3f);
+                enemy.AplicarRalentizacion(ralentizacion * nivelArma * 1.3f);
             }
         }
     }
 
     private IEnumerator recibirDano()
     {
-        foreach (GameObject enemigo in listaEnemigos)
+        while (true)
         {
-            EnemyController controlador_enemigo = enemigo.GetComponent<EnemyController>();
-            if (controlador_enemigo)
+            foreach (GameObject enemigo in listaEnemigos)
             {
-                controlador_enemigo.Recibirdano(damage);
+                if (enemigo == null) continue;
+
+                EnemyController controlador_enemigo = enemigo.GetComponent<EnemyController>();
+                if (controlador_enemigo)
+                {
+                    controlador_enemigo.Recibirdano(damage + nivelArma * 1.2f);
+                }
             }
+
+            yield return new WaitForSeconds(ticDano);
         }
-        yield return new WaitForSeconds(ticDano);
     }
 
     private void OnTriggerExit(Collider other)

@@ -129,6 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   Stats: {fileID: 11400000, guid: 3e7cac156b012c04b8b4550cd92ba149, type: 2}
   currentHP: 0
+  tiempoFlash: 0.25
+  prefabDano: {fileID: 9199474146357438228, guid: dd15294215ca03f4298e5e195c563ec8, type: 3}
 --- !u!54 &1643739360206364769
 Rigidbody:
   m_ObjectHideFlags: 0

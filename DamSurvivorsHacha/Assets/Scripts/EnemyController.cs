@@ -25,6 +25,9 @@ public class EnemyController : MonoBehaviour
     private Renderer render;
     private Color colorOriginal;
     public float tiempoFlash = 0.25f;
+
+    // Prefab para la cantidad de daño
+    public GameObject prefabDano;
     
     /// <summary>
     /// /////////////////////////////////// Funciones Unity ///////////////////////////////
@@ -73,6 +76,11 @@ public class EnemyController : MonoBehaviour
         if (currentHP <= 0)
         {
             Morir();
+        }
+        if (prefabDano != null)
+        {
+            GameObject danoEnPantalla = Instantiate(prefabDano, transform.position + Vector3.up, Quaternion.identity);
+            danoEnPantalla.GetComponent<DamagePopup>().Setup(danio);
         }
     }
 

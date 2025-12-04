@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "ContolPausa",
+    "maps": [
+        {
+            "name": "Parar",
+            "id": "78c5e2f2-9fc0-47dd-bbe5-edc251e3f694",
+            "actions": [
+                {
+                    "name": "Pausar",
+                    "type": "Button",
+                    "id": "3ab80855-d482-495d-8dfc-6ec06d65a091",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "41b2cfa4-0ac3-4d83-8a20-cd753a3d924b",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pausar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

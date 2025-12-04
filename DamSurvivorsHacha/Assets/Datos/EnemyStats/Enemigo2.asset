@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7688acbee23ff8e4b9810e2366035581, type: 3}
   m_Name: Enemigo2
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  MaxHP: 2000
+  MaxHP: 200
   Damage: 2
   Defense: 0
   Speed: 3
