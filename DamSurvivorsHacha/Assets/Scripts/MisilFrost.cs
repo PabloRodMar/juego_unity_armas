@@ -11,6 +11,7 @@ public class FrostZone : MonoBehaviour
 
     public GameObject player;
     public int damage = 1;
+    public int lvl = 1;
     public float ticDano = 1f;
     private List<GameObject> listaEnemigos;
 
@@ -53,7 +54,7 @@ public class FrostZone : MonoBehaviour
             EnemyController enemy = other.GetComponent<EnemyController>();
             if (enemy)
             {
-                enemy.AplicarRalentizacion(ralentizacion);
+                enemy.AplicarRalentizacion(ralentizacion * lvl * 1.3f);
             }
         }
     }

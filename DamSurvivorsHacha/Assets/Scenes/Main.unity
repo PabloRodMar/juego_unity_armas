@@ -745,7 +745,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce4d0fd2a375304fb9ee42b18b727ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LanzadorFrost
-  armaPrefab: {fileID: 141498349168935902, guid: 0db5d92cfd0b67940bcb52ca7f07c88a, type: 3}
+  armaPrefab: {fileID: 8704008045383399303, guid: ca51940dfbe2b3e4a96c9c3254c5a94e, type: 3}
+  player: {fileID: 721838902}
+--- !u!4 &721838902 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6998816648135089959, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
+  m_PrefabInstance: {fileID: 4161324279776882359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
