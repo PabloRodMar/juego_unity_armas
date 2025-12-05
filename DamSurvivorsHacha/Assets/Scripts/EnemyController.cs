@@ -84,8 +84,85 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void SoltarExperiencia()
+    {
+        // Tomamos un número entre 0 y 100
+        float numero_random = Random.Range(0f, 100f);
+
+        float acumulado = 0f;
+
+        GameObject xpPrefab = null;
+
+        int tier = 1;
+        // Explicación: Random.Range() generará un número del 0 al 100.
+        // Pongamos que genera un 12. Entramos justo en el orbe gris, y vemos que
+        // el número generado es <= que el acumulado (en este caso, 50 para el orbe gris)
+        // Esto se repite hasta que, por ejemplo, se genere un 100, que es el único caso en el que
+        // un orbe dorado se puede generar.
+
+        // Gris
+        acumulado += Stats.probXP_Gris;
+        if (numero_random <= acumulado)
+        { 
+            xpPrefab = Stats.xpGris; 
+            tier = 1; 
+            SpawnXP(xpPrefab, tier);
+            return;
+        }
+
+        // Verde
+        acumulado += Stats.probXP_Verde;
+        if (numero_random <= acumulado) 
+        {
+            xpPrefab = Stats.xpVerde; 
+            tier = 2; 
+            SpawnXP(xpPrefab, tier);
+            return;
+        }
+
+        // Azul
+        acumulado += Stats.probXP_Azul;
+        if (numero_random <= acumulado) 
+        {
+            xpPrefab = Stats.xpAzul; 
+            tier = 3; 
+            SpawnXP(xpPrefab, tier);
+            return;
+        }
+
+        // Morado
+        acumulado += Stats.probXP_Morado;
+        if (numero_random <= acumulado) 
+        {
+            xpPrefab = Stats.xpMorado; 
+            tier = 4;
+            SpawnXP(xpPrefab, tier);
+            return;
+        }
+
+        // Dorado
+        acumulado += Stats.probXP_Dorado;
+        if (numero_random <= acumulado) 
+        {
+            xpPrefab = Stats.xpDorado; 
+            tier = 5;
+            SpawnXP(xpPrefab, tier);
+            return;
+        }
+    }
+
+    private void SpawnXP(GameObject prefab, int tier)
+    {
+        if (prefab != null)
+        {
+            GameObject xp = Instantiate(prefab, transform.position, Quaternion.identity);
+            xp.GetComponent<Experience>().tier = tier;
+        }
+    }
+
     private void Morir()
     {
+        SoltarExperiencia();
         Destroy(gameObject);
     }
 

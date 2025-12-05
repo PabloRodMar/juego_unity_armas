@@ -12,7 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7688acbee23ff8e4b9810e2366035581, type: 3}
   m_Name: Enemigo1
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  MaxHP: 100
+  MaxHP: 10
   Damage: 1
   Defense: 0
   Speed: 10
+  probXP_Gris: 50
+  probXP_Verde: 30
+  probXP_Azul: 15
+  probXP_Morado: 4
+  probXP_Dorado: 1
+  xpGris: {fileID: 900718043162575343, guid: b7c3a1784e78fd14b8ab5a3d8a70daa4, type: 3}
+  xpVerde: {fileID: 900718043162575343, guid: 4be5c3e6bbe1d4741b874d557ccb8752, type: 3}
+  xpAzul: {fileID: 900718043162575343, guid: 8f15785fece429b469bfb2ce2763bfa0, type: 3}
+  xpMorado: {fileID: 900718043162575343, guid: a593fba3a16cd90428cee381ee438f82, type: 3}
+  xpDorado: {fileID: 900718043162575343, guid: bbde518d6266c3141a5514934c7ecebd, type: 3}

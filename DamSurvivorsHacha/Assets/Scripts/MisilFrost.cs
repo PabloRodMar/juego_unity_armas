@@ -11,9 +11,11 @@ public class FrostZone : MonoBehaviour
 
     public GameObject player;
     public int damage = 1;
-    public int nivelArma = 1;
     public float ticDano = 1f;
     private List<GameObject> listaEnemigos;
+
+    public bool unlocked;
+    public int nivelArma;
 
     void Start()
     {

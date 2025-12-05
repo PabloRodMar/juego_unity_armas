@@ -12,4 +12,5 @@ public class LanzadorFrost : MonoBehaviour
         armaPrefab.GetComponent<FrostZone>().nivelArma = lvl;
         Instantiate(armaPrefab, player.position, transform.rotation);
     }
+
 }

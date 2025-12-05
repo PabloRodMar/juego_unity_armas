@@ -6,9 +6,11 @@ public class Hacha : MonoBehaviour
     public float speed = 8f;
     public float tiempoVida = 2.5f;
     public int damage = 25;
-    public int nivelArma;
     private float mulDano = 1.5f;
     private float mulVel = 0.5f;
+
+    public bool unlocked;
+    public int nivelArma;
 
     // Update is called once per frame
     void Start()

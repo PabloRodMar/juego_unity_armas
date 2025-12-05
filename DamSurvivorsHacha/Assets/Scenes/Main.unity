@@ -264,7 +264,6 @@ MonoBehaviour:
   player: {fileID: 695006229}
   oleadas:
   - {fileID: 11400000, guid: 87b09023b01df3145951dff2ea5ec873, type: 2}
-  - {fileID: 11400000, guid: 0bef993e290729342991626ffb43ce6e, type: 2}
 --- !u!4 &100598263
 Transform:
   m_ObjectHideFlags: 0
@@ -1020,6 +1019,53 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &492430006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492430007}
+  - component: {fileID: 492430008}
+  m_Layer: 0
+  m_Name: LanzadorHacha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &492430007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492430006}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.2695923, y: -0.31386948, z: -0.4210968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 695006229}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &492430008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492430006}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cefe932b6b76140862d7a174c84c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LanzadorHacha
+  armaPrefab: {fileID: 4057599776085108960, guid: b85dad69f0a2557498a38b05336393fa, type: 3}
+  ratioDeDisparo: 1
+  lvl: 0
 --- !u!1 &671252753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,58 +1194,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7826763698237530543, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
   m_PrefabInstance: {fileID: 4161324279776882359}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &695006232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695006225}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6cefe932b6b76140862d7a174c84c0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LanzadorArma
-  armaPrefab: {fileID: 4057599776085108960, guid: b85dad69f0a2557498a38b05336393fa, type: 3}
-  ratioDeDisparo: 1
-  lvl: 1
---- !u!114 &695006233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695006225}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5a9bb35c1620cf46b6740eb0d84f817, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LanzadorVarita
-  radioBusqueda: 20
-  cooldown: 1
-  cooldownMisiles: 0.15
-  lvl: 2
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  proyectilPrefab: {fileID: 5282059859811340158, guid: ff8381f1b0e17dd40913762314ddc9f0, type: 3}
-  player: {fileID: 695006229}
---- !u!114 &695006239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695006225}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67281f3b30b4f2940ae87ae0fbf8f9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LanzadorOrbital
-  bulletPrefab: {fileID: 9182903422500029211, guid: cdc0dc49de371c3438075613d7bc0fc9, type: 3}
-  lvl: 1
-  lastlvl: 0
---- !u!114 &695006245
+--- !u!114 &695006251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1208,17 +1203,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 695006225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bce4d0fd2a375304fb9ee42b18b727ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 59c6f5d15d989e64e81fa960459ceaf4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LanzadorFrost
-  armaPrefab: {fileID: 8704008045383399303, guid: ca51940dfbe2b3e4a96c9c3254c5a94e, type: 3}
-  player: {fileID: 721838902}
-  lvl: 1
---- !u!4 &721838902 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6998816648135089959, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
-  m_PrefabInstance: {fileID: 4161324279776882359}
-  m_PrefabAsset: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::DebugLevel
+  lanzadores:
+  - {fileID: 492430008}
+  - {fileID: 1040471924}
+  - {fileID: 1815935417}
+  - {fileID: 1016120120}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,6 +1489,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898740851}
   m_CullTransparentMesh: 1
+--- !u!1 &1016120118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1016120119}
+  - component: {fileID: 1016120120}
+  m_Layer: 0
+  m_Name: LanzadorFrost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1016120119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016120118}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.2695923, y: -0.31386948, z: -0.4210968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 695006229}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1016120120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016120118}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce4d0fd2a375304fb9ee42b18b727ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LanzadorFrost
+  armaPrefab: {fileID: 8704008045383399303, guid: ca51940dfbe2b3e4a96c9c3254c5a94e, type: 3}
+  player: {fileID: 695006229}
+  lvl: 0
+--- !u!1 &1040471922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1040471923}
+  - component: {fileID: 1040471924}
+  m_Layer: 0
+  m_Name: LanzadorVarita
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1040471923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040471922}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.2695923, y: -0.31386948, z: -0.4210968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 695006229}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1040471924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040471922}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a9bb35c1620cf46b6740eb0d84f817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LanzadorVarita
+  radioBusqueda: 20
+  cooldown: 1
+  cooldownMisiles: 0.15
+  lvl: 2
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  proyectilPrefab: {fileID: 5282059859811340158, guid: ff8381f1b0e17dd40913762314ddc9f0, type: 3}
+  player: {fileID: 695006229}
 --- !u!1001 &1081147588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2155,6 +2247,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802482029}
   m_CullTransparentMesh: 1
+--- !u!1 &1815935415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1815935416}
+  - component: {fileID: 1815935417}
+  m_Layer: 0
+  m_Name: LanzadorOrbital
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1815935416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815935415}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.2695923, y: -0.31386948, z: -0.4210968}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 695006229}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1815935417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815935415}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67281f3b30b4f2940ae87ae0fbf8f9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LanzadorOrbital
+  bulletPrefab: {fileID: 9182903422500029211, guid: cdc0dc49de371c3438075613d7bc0fc9, type: 3}
+  lvl: 1
+  lastlvl: 0
 --- !u!1 &1821787869
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,6 +2524,10 @@ PrefabInstance:
       propertyPath: armaPrefab
       value: 
       objectReference: {fileID: 5539259773598772490, guid: d709a38d71901f74d8b8a3e0e084f6f9, type: 3}
+    - target: {fileID: 5385636982090544969, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7447197333509052826, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -2437,21 +2580,24 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7826763698237530543, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 492430007}
+    - targetCorrespondingSourceObject: {fileID: 7826763698237530543, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1040471923}
+    - targetCorrespondingSourceObject: {fileID: 7826763698237530543, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1815935416}
+    - targetCorrespondingSourceObject: {fileID: 7826763698237530543, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1016120119}
+    - targetCorrespondingSourceObject: {fileID: 7826763698237530543, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1548877049}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7783906019512743891, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 695006232}
-    - targetCorrespondingSourceObject: {fileID: 7783906019512743891, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 695006233}
-    - targetCorrespondingSourceObject: {fileID: 7783906019512743891, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 695006239}
-    - targetCorrespondingSourceObject: {fileID: 7783906019512743891, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 695006245}
+      addedObject: {fileID: 695006251}
   m_SourcePrefab: {fileID: 100100000, guid: 7a11fee45377df749bed52ef743d6432, type: 3}
 --- !u!1001 &6115626135068715340
 PrefabInstance:

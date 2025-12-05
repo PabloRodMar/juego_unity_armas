@@ -7,14 +7,19 @@ public class MisilOrbital : MonoBehaviour
     public float radius = 2f;
     public float initialAngle;
     public int damage = 20;
-    public int nivelArma = 1;
     public float mulDano = 1.5f;
     public float mulVel = 0.5f;
 
+    public bool unlocked;
+    public int nivelArma;
+    private int lvl_anterior;
+
     private Vector3 offset;
+    public LanzadorOrbital lanzador;
 
     void Start()
     {
+        lvl_anterior = nivelArma;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         // El objetivo de este cálculo matemático (para mí) complejo
         // es determinar dónde "spawneará" la bola al subir de nivel.
@@ -26,6 +31,12 @@ public class MisilOrbital : MonoBehaviour
 
     void Update()
     {
+        if (nivelArma != lvl_anterior)
+        {
+            lanzador.lvl = nivelArma;
+            lvl_anterior = nivelArma;
+        }
+
         // Rotar el offset sin importar la rotación del player
         offset = Quaternion.Euler(0, rotationSpeed * Time.deltaTime * nivelArma * mulVel, 0) * offset;
         transform.position = player.position + offset;

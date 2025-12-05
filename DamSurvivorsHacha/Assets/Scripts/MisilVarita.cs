@@ -6,6 +6,9 @@ public class MisilVarita : MonoBehaviour
     public float tiempoVida = 2f;
     public int damage = 25;
 
+    public bool unlocked;
+    public int nivelArma;
+
     private Transform objetivo;
 
     public void SetObjetivo(Transform obj)

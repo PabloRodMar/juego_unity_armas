@@ -157,3 +157,5 @@ MonoBehaviour:
   speed: 10
   tiempoVida: 5
   damage: 25
+  unlocked: 0
+  nivelArma: 0

@@ -5,6 +5,7 @@ public class PlayerStats : MonoBehaviour
     private int currentHealth;
     private int maxHealth = 100;
     private int defensa = 0;
+    public int ExpActual;
     private bool estaVivo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,10 +24,8 @@ public class PlayerStats : MonoBehaviour
     {
 
     }
-    
 
     //////////////////////////////// Funciones propias /////////////////////////
-    
     public void RecibirDmg(int dmg)
     {
         if (!estaVivo) return;

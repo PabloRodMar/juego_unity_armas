@@ -129,5 +129,6 @@ MonoBehaviour:
   ralentizacion: 0.3
   player: {fileID: 0}
   damage: 7
-  nivelArma: 1
   ticDano: 0.3
+  unlocked: 0
+  nivelArma: 0

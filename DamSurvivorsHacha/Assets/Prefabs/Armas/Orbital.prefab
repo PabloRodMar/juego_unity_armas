@@ -129,6 +129,8 @@ MonoBehaviour:
   radius: 1.5
   initialAngle: 0
   damage: 20
-  nivelArma: 2
   mulDano: 1.5
   mulVel: 0.5
+  unlocked: 0
+  nivelArma: 6
+  lanzador: {fileID: 0}

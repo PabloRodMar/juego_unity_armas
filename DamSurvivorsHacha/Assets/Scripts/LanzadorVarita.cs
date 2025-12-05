@@ -9,7 +9,7 @@ public class LanzadorVarita : MonoBehaviour
     public float radioBusqueda = 20f;
     public float cooldown = 1f;
     public float cooldownMisiles = 0.15f;
-    // Esta arma empieza a lvl 2
+    // Esta arma es la única que empieza a lvl 2
     // Tiene sentido porque dispara 1 por nivel, y de base dispara 2
     // Esta es la única modificación cuando se sube de nivel el arma
     public int lvl = 2;
