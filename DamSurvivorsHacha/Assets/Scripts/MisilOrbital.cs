@@ -11,7 +11,7 @@ public class MisilOrbital : MonoBehaviour
     public float mulVel = 0.5f;
 
     public bool unlocked;
-    public int nivelArma;
+    public int nivelArma = 0;
     private int lvl_anterior;
 
     private Vector3 offset;
@@ -31,6 +31,8 @@ public class MisilOrbital : MonoBehaviour
 
     void Update()
     {
+        // Esto es ultra poco eficiente, tener que hacer esta comprobación cada frame,
+        // pero es la forma más fácil que se me ocurrió
         if (nivelArma != lvl_anterior)
         {
             lanzador.lvl = nivelArma;

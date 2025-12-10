@@ -6,7 +6,7 @@ public class LanzadorHacha : MonoBehaviour
     public GameObject armaPrefab;
     public float ratioDeDisparo = 1f; // Armas por segundo
     // Nivel del arma
-    public int lvl = 1;
+    public int lvl = 0;
     void Start()
     {
         StartCoroutine(dispararArma());

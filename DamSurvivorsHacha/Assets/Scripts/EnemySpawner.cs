@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     /// </summary>
     [Header("Configuración de Spawn")]
     [SerializeField]
-    private float spawnRadius = 10f;
+    private float spawnRadius = 30f;
 
     [Header("GameObjects")]
     [SerializeField]
@@ -32,8 +32,8 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < oleada.CantidadDeEnemigos; i++)
         {
-            Vector2 randomPoint = Random.insideUnitCircle * spawnRadius;
-            Vector3 spawnPosition = player.position + new UnityEngine.Vector3(randomPoint.x, 0f, randomPoint.y);
+            Vector2 randomPoint = Random.insideUnitCircle.normalized * spawnRadius;
+            Vector3 spawnPosition = player.position + new Vector3(randomPoint.x, 0f, randomPoint.y);
             Instantiate(oleada.EnemyPrefab, spawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(oleada.SpawnRate);
         }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class LanzadorOrbital : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public int lvl = 1;
+    public int lvl = 0;
     public int lastlvl;
 
     private List<GameObject> orbitals = new List<GameObject>();

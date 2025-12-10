@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DataOleada
   EnemyPrefab: {fileID: 6879654896103587990, guid: d748eec37beb69e48b00b19210894d15, type: 3}
   SpawnRate: 2
-  CantidadDeEnemigos: 10
-  TiempoEntreOleadas: 5
+  CantidadDeEnemigos: 50
+  TiempoEntreOleadas: 30

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7688acbee23ff8e4b9810e2366035581, type: 3}
   m_Name: Enemigo1
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  MaxHP: 10
+  MaxHP: 100
   Damage: 1
   Defense: 0
-  Speed: 10
+  Speed: 20
   probXP_Gris: 50
   probXP_Verde: 30
   probXP_Azul: 15

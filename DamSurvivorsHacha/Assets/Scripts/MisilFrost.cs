@@ -45,7 +45,7 @@ public class FrostZone : MonoBehaviour
             EnemyController enemy = other.GetComponent<EnemyController>();
             if (enemy)
             {
-                enemy.AplicarRalentizacion(ralentizacion * nivelArma * 1.3f);
+                enemy.AplicarRalentizacion(ralentizacion / nivelArma * 1.2f);
             }
         }
     }

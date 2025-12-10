@@ -9,10 +9,9 @@ public class LanzadorVarita : MonoBehaviour
     public float radioBusqueda = 20f;
     public float cooldown = 1f;
     public float cooldownMisiles = 0.15f;
-    // Esta arma es la única que empieza a lvl 2
-    // Tiene sentido porque dispara 1 por nivel, y de base dispara 2
-    // Esta es la única modificación cuando se sube de nivel el arma
-    public int lvl = 2;
+    // Realmente se desbloquea a nivel 2, ya que dispara 1 proyectil por nivel
+    // y si se desbloquease a nivel 1, sólo dispararía 1 (que no es lo que se pide)
+    public int lvl = 1;
     public LayerMask enemyLayer;
 
     [Header("Proyectil")]
@@ -21,10 +20,10 @@ public class LanzadorVarita : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(DispararAmbos());
+        StartCoroutine(DispararOleada());
     }
 
-    IEnumerator DispararAmbos()
+    IEnumerator DispararOleada()
     {
         while (true)
         {
@@ -57,6 +56,7 @@ public class LanzadorVarita : MonoBehaviour
         );
 
             misil.GetComponent<MisilVarita>().SetObjetivo(objetivo);
+            misil.GetComponent<MisilVarita>().nivelArma = lvl;
 
             yield return new WaitForSeconds(cooldownMisiles);
         }

@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class MisilVarita : MonoBehaviour
 {
-    public float speed = 15f;
+    public float speed = 20f;
     public float tiempoVida = 2f;
     public int damage = 25;
 
     public bool unlocked;
-    public int nivelArma;
+    public int nivelArma = 1;
 
     private Transform objetivo;
 
@@ -32,7 +32,7 @@ public class MisilVarita : MonoBehaviour
         transform.position = Vector3.MoveTowards(
             transform.position,
             objetivo.position,
-            speed * Time.deltaTime
+            speed * Time.deltaTime * nivelArma * 0.75f
         );
     }
 
@@ -42,7 +42,7 @@ public class MisilVarita : MonoBehaviour
             EnemyController enemy = other.GetComponent<EnemyController>();
             if (enemy != null)
             {
-                enemy.Recibirdano(damage);
+                enemy.Recibirdano(damage * nivelArma * 1.2f);
                 Destroy(gameObject);
             }
         }

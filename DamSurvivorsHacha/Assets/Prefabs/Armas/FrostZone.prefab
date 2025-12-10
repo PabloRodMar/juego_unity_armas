@@ -131,4 +131,4 @@ MonoBehaviour:
   damage: 7
   ticDano: 0.3
   unlocked: 0
-  nivelArma: 0
+  nivelArma: 1
